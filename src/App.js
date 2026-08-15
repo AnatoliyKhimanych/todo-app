@@ -7,12 +7,17 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (text) => {
-    setTodos([...todos, text]);
+    const newTodo = {
+      text,
+      isCompleted: false,
+      id: crypto.randomUUID(),
+    };
+    setTodos([...todos, newTodo]);
   };
 
-  const deleteTodoHandler = (index) => {
-    setTodos(todos.filter((_, idx) => idx !== index))
-  }
+  const deleteTodoHandler = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   return (
     <div className="App">
