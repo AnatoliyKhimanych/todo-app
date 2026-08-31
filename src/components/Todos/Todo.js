@@ -5,7 +5,7 @@ import { RiDeleteBin2Line, RiTodoFill } from 'react-icons/ri';
 
 const Todo = ({ todo, deleteTodo, toggleTodo }) => {
   return (
-    <div className={styles.todo}>
+    <div className={`${styles.todo} ${todo.isCompleted ? styles.completedTodo : ''}`}>
       <RiTodoFill className={styles.todoIcon} />
       <div className={styles.todoText}>{todo.text}</div>
       <RiDeleteBin2Line className={styles.deleteIcon} onClick={() => deleteTodo(todo.id)}/>
