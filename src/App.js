@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import TodoForm from './components/Todos/TodoForm';
 import TodoList from './components/Todos/TodoList';
-import { TodosActions } from './components/Todos/TodosActions';
+import TodosActions from './components/Todos/TodosActions';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -28,7 +28,6 @@ function App() {
           : todo;
       }),
     );
-    console.log(todos);
   };
 
   return (
