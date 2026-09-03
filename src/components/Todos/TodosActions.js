@@ -1,5 +1,6 @@
 import { RiResetLeftFill, RiDeleteBin2Line } from 'react-icons/ri';
 import Button from '../UI/Button.js';
+import styles from './TodosActions.module.css';
 
 const TodosActions = ({
   resetTodos,
@@ -7,7 +8,7 @@ const TodosActions = ({
   completedTodosExist,
 }) => {
   return (
-    <>
+    <div className={styles.todosActionsContainer}>
       <Button title={'Reset todos'} onClick={resetTodos}>
         <RiResetLeftFill />
       </Button>
@@ -18,7 +19,7 @@ const TodosActions = ({
       >
         <RiDeleteBin2Line />
       </Button>
-    </>
+    </div>
   );
 };
 
