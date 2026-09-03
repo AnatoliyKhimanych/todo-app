@@ -1,6 +1,7 @@
 import { RiResetLeftFill, RiDeleteBin2Line } from 'react-icons/ri';
+import Button from '../UI/Button.js';
 
-export const TodosActions = ({ todos, setTodos }) => {
+const TodosActions = ({ todos, setTodos }) => {
   const resetTodosHandler = () => {
     setTodos([]);
   };
@@ -11,8 +12,14 @@ export const TodosActions = ({ todos, setTodos }) => {
 
   return (
     <>
-    <button>Reset</button>
-    <button>Delete completed todos</button>
+      <Button title={'Reset todos'}>
+        <RiResetLeftFill />
+      </Button>
+      <Button title={'Delete completed todos'}>
+        <RiDeleteBin2Line />
+      </Button>
     </>
-  )
+  );
 };
+
+export default TodosActions;
