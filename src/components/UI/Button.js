@@ -4,7 +4,7 @@ const Button = ({ onClick, children, title, disabled = false }) => {
   return (
     <button
       className={styles.button}
-      onClick={onClick}
+      onClick={() => onClick()}
       title={title}
       disabled={disabled}
     >

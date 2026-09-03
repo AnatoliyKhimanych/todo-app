@@ -1,21 +1,16 @@
 import { RiResetLeftFill, RiDeleteBin2Line } from 'react-icons/ri';
 import Button from '../UI/Button.js';
 
-const TodosActions = ({ todos, setTodos }) => {
-  const resetTodosHandler = () => {
-    setTodos([]);
-  };
-
-  const deleteCompletedTodosHandler = () => {
-    setTodos(todos.filter((todo) => todo.isCompleted !== true));
-  };
-
+const TodosActions = ({ resetTodos, deleteCompletedTodos }) => {
   return (
     <>
-      <Button title={'Reset todos'}>
+      <Button title={'Reset todos'} onClick={resetTodos}>
         <RiResetLeftFill />
       </Button>
-      <Button title={'Delete completed todos'}>
+      <Button
+        title={'Delete completed todos'}
+        onClick={deleteCompletedTodos}
+      >
         <RiDeleteBin2Line />
       </Button>
     </>
